@@ -62,11 +62,13 @@ export default {
         socket.on("raw", data => {
             this.n = data.current_aforo;
         });
-        socket.on("summary", () => {
+        socket.on("summary", data => {
             console.log('Sumario');
+            console.log(data);
         });
-        socket.on("heartbeat", () => {
+        socket.on("heartbeat", data => {
             console.log('Beat');
+            console.log(data);
         });
 
 

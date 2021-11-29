@@ -52,7 +52,7 @@ export default {
     methods: {
             login() {
                 axios().post('/api/login',{
-                    "auth": "Y2xpY2tlcjEuZGVtbzphZG1pbjEyMzpJS0xBQjAwNQ==",//`btoa(${this,username}:${this.password}:IKLAB005`,
+                    "auth": btoa(`${this.username}:${this.password}:IKLAB005`),
                     "privilegesDetail": true
                 })
                 .then(res => {
@@ -64,6 +64,7 @@ export default {
                 })
                 .catch(err => {
                     console.log(err);
+                    store.user=null;
                 })
 
         }
