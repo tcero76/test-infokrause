@@ -70,8 +70,9 @@ export default {
             console.log('Beat');
             console.log(data);
         });
-
-
+    },
+    destroyed() {
+        socket.close();
 
     }
     
